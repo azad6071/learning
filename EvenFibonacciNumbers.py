@@ -1,12 +1,19 @@
 
-def sumOfMultipleOf3and5BelowNum(num):
+def sumOfEvenFibonacciNumbersTillNum(num):
+    x = 0
+    y = 1
     sum = 0
-    for i in range(1, num):
-        if i % 3 == 0 or i % 5 == 0:
-            sum=sum+i
+    while x+y <= num:
+        t = x+y
+        x = y
+        y = t
+        if t % 2 == 0:
+            sum = sum + t
     return sum
+
 def __main__():
-    print(sumOfMultipleOf3and5BelowNum(10))
-    print(sumOfMultipleOf3and5BelowNum(1000))
+    print(sumOfEvenFibonacciNumbersTillNum(8))
+    print(sumOfEvenFibonacciNumbersTillNum(4_000_000))
+
 
 __main__()
